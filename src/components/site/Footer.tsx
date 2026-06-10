@@ -58,7 +58,12 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-page py-6 flex flex-col md:flex-row gap-3 items-start md:items-center justify-between text-xs opacity-60">
-          <div>© {new Date().getFullYear()} Trans Gulf Global (Pvt) Ltd. 無断転載を禁じます。</div>
+          <div className="space-y-1">
+            <div>© {new Date().getFullYear()} Trans Gulf Global (Pvt) Ltd. 無断転載を禁じます。</div>
+            <div>
+              Developed by <a href="https://www.lashuraglobal.com/" className="underline hover:text-[color:var(--brand-red)]">Lashura Global (Pvt) Ltd</a>
+            </div>
+          </div>
           <div className="mono tracking-widest uppercase">キャンディ・スリランカ → 東京・日本</div>
         </div>
       </div>
