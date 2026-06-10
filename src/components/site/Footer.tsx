@@ -46,11 +46,12 @@ export function Footer() {
           <ul className="space-y-4 text-sm">
             <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 opacity-60" /><a href="mailto:japan@tggkandy.com" className="hover:text-[color:var(--brand-red)]">japan@tggkandy.com</a></li>
             <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 opacity-60" /><a href="tel:+94812220000">+94 81 222 0000</a></li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 opacity-60" /><a href="tel:+94775300221">+94 77 5300221</a></li>
             <li className="flex gap-3"><Globe className="h-4 w-4 mt-0.5 opacity-60" /><a href="https://www.tggkandy.com" className="hover:text-[color:var(--brand-red)]">www.tggkandy.com</a></li>
           </ul>
           <div className="mt-8 p-4 rounded-xl border border-white/10">
             <div className="mono text-[10px] tracking-widest uppercase opacity-50">認可・コンプライアンス</div>
-            <div className="text-sm mt-1">SLBFE認可番号 387</div>
+            <div className="text-sm mt-1">SLBFE認可番号 3687</div>
             <div className="text-[11px] mt-1 opacity-70">OTIT送り出し機関番号 LKA000138</div>
           </div>
         </div>

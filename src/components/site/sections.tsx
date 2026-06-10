@@ -464,6 +464,7 @@ export function Contact() {
           <div className="mt-10 space-y-4 text-sm">
             <div className="flex items-center gap-3"><BriefcaseBusiness className="h-4 w-4 text-[color:var(--brand-red)]" /><span>japan@tggkandy.com</span></div>
             <div className="flex items-center gap-3"><Headphones className="h-4 w-4 text-[color:var(--brand-red)]" /><span>+94 81 222 0000</span></div>
+            <div className="flex items-center gap-3"><Headphones className="h-4 w-4 text-[color:var(--brand-red)]" /><span>+94 77 5300221</span></div>
             <div className="flex items-center gap-3"><Building2 className="h-4 w-4 text-[color:var(--brand-red)]" /><span>スリランカ、キャンディ、ディー・エス・セナナヤケ通り163/3</span></div>
           </div>
         </div>
@@ -586,7 +587,7 @@ export function JapanSpecialization() {
               </div>
               {i === 2 && (
                 <div className="mt-6 pt-4 border-t border-[color:var(--hairline)] flex justify-between text-xs mono text-[color:var(--ink-soft)]">
-                  <span>認可番号 387</span>
+                  <span>認可番号 3687</span>
                   <span>OTIT番号 LKA000138</span>
                 </div>
               )}
