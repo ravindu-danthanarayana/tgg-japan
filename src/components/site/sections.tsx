@@ -5,23 +5,16 @@ import {
   HeartHandshake, BadgeCheck, TrendingUp, Headphones,
   Search, ClipboardCheck, Wrench, FileCheck2, FileText, Plane, Stethoscope,
   GraduationCap, PackageCheck, Building2, HardHat, Factory, Hotel, Truck,
-  UtensilsCrossed, Sprout, ShoppingBag, Wrench as WrenchIcon, Cog, BriefcaseBusiness,
+  UtensilsCrossed, Sprout, Wrench as WrenchIcon, Cog, BriefcaseBusiness,
 } from "lucide-react";
 import heroImg from "@/assets/hero-main.jpg";
-import careImg from "@/assets/industry-care.jpg";
-import mfgImg from "@/assets/industry-manufacturing.jpg";
-import hospImg from "@/assets/industry-hospitality.jpg";
-import logImg from "@/assets/industry-logistics.jpg";
-import healthcareImg from "@/assets/industry-healthcare.png";
-import foodImg from "@/assets/industry-food-processing.png";
-import agriImg from "@/assets/industry-agriculture.png";
-import retailImg from "@/assets/industry-retail.png";
-import facilityImg from "@/assets/industry-facility.png";
-import transportImg from "@/assets/industry-transportation.png";
 import chairmanImg from "@/assets/chairman.jpg";
 import lobbyImg from "@/assets/office-lobby.jpg";
 import teamImg from "@/assets/team.jpg";
 import collaborateImg from "@/assets/new-collabarate.jpg";
+import about1Img from "@/assets/about-1.jpg";
+import about2Img from "@/assets/about-2.jpg";
+import about3Img from "@/assets/about-3.jpg";
 import trophyStar from "@/assets/award-excellence-star.png";
 import trophyGlobe from "@/assets/award-excellence-globe.png";
 import trophySlbfe from "@/assets/award-slbfe-golden.png";
@@ -33,7 +26,7 @@ export function Hero() {
       <div className="container-page grid lg:grid-cols-12 gap-12 items-end">
         <div className="lg:col-span-7">
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="eyebrow">日本向け人材事業部・1989年創業</span>
+            <span className="eyebrow">Trans Gulf Global・1989年創業</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.05 }}
@@ -54,7 +47,6 @@ export function Hero() {
             className="mt-10 flex flex-wrap gap-3"
           >
             <Link to="/contact" className="btn-primary">人材を相談する <ArrowUpRight className="h-4 w-4" /></Link>
-            <Link to="/contact" className="btn-ghost">採用相談を予約 <ArrowRight className="h-4 w-4" /></Link>
           </motion.div>
         </div>
 
@@ -143,6 +135,9 @@ export function About() {
   const teamGallery = [
     { src: collaborateImg, alt: "Trans Gulf Global (Pvt) Ltdの採用打ち合わせ" },
     { src: teamImg, alt: "Trans Gulf Global (Pvt) Ltdの採用チーム" },
+    { src: about1Img, alt: "Trans Gulf Global (Pvt) Ltdの事業活動" },
+    { src: about2Img, alt: "Trans Gulf Global (Pvt) Ltdのチーム紹介" },
+    { src: about3Img, alt: "Trans Gulf Global (Pvt) Ltdの現場風景" },
   ];
 
   return (
@@ -184,9 +179,14 @@ export function About() {
               <li key={t} className="flex items-center gap-3"><Check className="h-4 w-4 text-[color:var(--brand-red)]" strokeWidth={2} /><span>{t}</span></li>
             ))}
           </ul>
-          <div className="grid grid-cols-2 gap-3 sm:gap-5">
-            {teamGallery.map((image) => (
-              <div key={image.alt} className="group aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl border border-[color:var(--hairline)] bg-[color:var(--paper-warm)] shadow-md ring-1 ring-black/5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            {teamGallery.map((image, idx) => (
+              <div
+                key={image.alt}
+                className={`group aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl border border-[color:var(--hairline)] bg-[color:var(--paper-warm)] shadow-md ring-1 ring-black/5 ${
+                  idx >= 3 ? "col-span-1" : ""
+                }`}
+              >
                 <img src={image.src} alt={image.alt} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
               </div>
             ))}
@@ -239,56 +239,45 @@ export function Services() {
 
 /* ---------- INDUSTRIES ---------- */
 export function Industries() {
-  const tiles = [
-    { t: "建設", i: HardHat, img: heroImg },
-    { t: "製造", i: Factory, img: mfgImg },
-    { t: "宿泊", i: Hotel, img: hospImg },
-    { t: "医療", i: Stethoscope, img: healthcareImg },
-    { t: "介護", i: HeartHandshake, img: careImg },
-    { t: "物流", i: Truck, img: logImg },
-    { t: "食品加工", i: UtensilsCrossed, img: foodImg },
-    { t: "農業", i: Sprout, img: agriImg },
-    { t: "小売", i: ShoppingBag, img: retailImg },
-    { t: "施設管理", i: Building2, img: facilityImg },
-    { t: "運輸", i: PackageCheck, img: transportImg },
-    { t: "技術職", i: Cog, img: heroImg },
+  const fields = [
+    { t: "運輸", i: Truck },
+    { t: "介護", i: HeartHandshake },
+    { t: "建設", i: HardHat },
+    { t: "製造", i: Factory },
+    { t: "宿泊", i: Hotel },
+    { t: "物流", i: PackageCheck },
+    { t: "食品加工", i: UtensilsCrossed },
+    { t: "農業", i: Sprout },
+    { t: "施設管理", i: Building2 },
+    { t: "技術職", i: Cog },
   ];
   return (
     <section id="industries" className="py-24 md:py-32">
       <div className="container-page">
         <SectionHead
           eyebrow="対応業種"
-          title={<>日本の主要産業を支える<span className="serif italic">人材ソリューション。</span></>}
-          lede="精密工場、介護施設、全国物流網など、各業界の現場要件に応じた候補者パイプラインを整えています。"
+          title={<>技能実習・特定技能の<span className="serif italic">全分野に対応。</span></>}
+          lede="技能実習制度および特定技能制度の全分野において、人材支援を行っています。"
         />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tiles.map(({ t, i: Icon, img }, idx) => (
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-[color:var(--hairline)] border border-[color:var(--hairline)] rounded-2xl overflow-hidden">
+          {fields.map(({ t, i: Icon }, idx) => (
             <motion.div
               key={t}
-              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: idx * 0.03 }}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-[color:var(--hairline)] bg-[color:var(--paper-warm)]"
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.4, delay: idx * 0.03 }}
+              className="bg-white p-7 flex flex-col items-start gap-4 transition hover:bg-[color:var(--paper)]"
             >
-              {img ? (
-                <>
-                  <img src={img} alt={t} loading="lazy" width={1200} height={900} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                </>
-              ) : (
-                <div className="absolute inset-0 grid place-items-center">
-                  <Icon className="h-16 w-16 text-[color:var(--ink-soft)]/30" strokeWidth={1} />
-                </div>
-              )}
-              <div className={`absolute inset-0 p-6 flex items-end justify-between ${img ? "text-white" : "text-[color:var(--ink)]"}`}>
-                <div>
-                  <div className="mono text-[10px] tracking-widest uppercase opacity-70">0{idx + 1 < 10 ? idx + 1 : idx + 1}</div>
-                  <div className="serif text-2xl mt-1">{t}</div>
-                </div>
-                <ArrowUpRight className="h-5 w-5 opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1 transition" strokeWidth={1.5} />
+              <Icon className="h-6 w-6 text-[color:var(--brand-red)]" strokeWidth={1.5} />
+              <div>
+                <div className="mono text-[10px] tracking-widest text-[color:var(--ink-soft)]">{String(idx + 1).padStart(2, '0')}</div>
+                <div className="text-base font-medium mt-1">{t}</div>
               </div>
             </motion.div>
           ))}
         </div>
+        <p className="mt-8 text-sm text-[color:var(--ink-soft)] leading-relaxed max-w-2xl">
+          上記以外の分野についても、技能実習制度・特定技能制度の対象職種であればご相談を承ります。
+        </p>
       </div>
     </section>
   );
@@ -430,7 +419,7 @@ export function Faq() {
         <div className="lg:col-span-4">
           <span className="eyebrow">よくある質問</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            日本の人事担当者が<span className="serif italic">最初に確認すること。</span>
+            採用に関する<span className="serif italic">ご質問。</span>
           </h2>
         </div>
         <div className="lg:col-span-8 border-t border-[color:var(--hairline)]">
@@ -467,7 +456,7 @@ export function Contact() {
         <div className="lg:col-span-5">
           <span className="eyebrow">お問い合わせ</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            人材のご相談は、<span className="serif italic">24時間以内にご連絡します。</span>
+            人材のご相談は、<span className="serif italic">お気軽にお問い合わせください。</span>
           </h2>
           <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed">
             採用人数、職種、時期などをご共有ください。専任担当者が貴社向けの提案をご案内します。
@@ -480,7 +469,7 @@ export function Contact() {
         </div>
 
         <form
-          onSubmit={(e) => { e.preventDefault(); alert("お問い合わせありがとうございます。担当者より24時間以内にご連絡いたします。"); }}
+          onSubmit={(e) => { e.preventDefault(); alert("お問い合わせありがとうございます。担当者より折り返しご連絡いたします。"); }}
           className="lg:col-span-7 bg-white border border-[color:var(--hairline)] rounded-2xl p-7 md:p-10 grid sm:grid-cols-2 gap-5"
         >
           {[
