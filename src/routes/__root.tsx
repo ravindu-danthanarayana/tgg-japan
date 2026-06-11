@@ -78,7 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Trans Gulf Global (Pvt) Ltd 日本事業部" },
-      { name: "description", content: "日本企業向けに、倫理的に採用されたスリランカ人材の募集、選考、送り出し、配属後支援を一貫して提供します。" },
+      {
+        name: "description",
+        content:
+          "日本企業向けに、倫理的に採用されたスリランカ人材の募集、選考、送り出し、配属後支援を一貫して提供します。",
+      },
       { name: "author", content: "Trans Gulf Global (Pvt) Ltd" },
       { property: "og:title", content: "Trans Gulf Global (Pvt) Ltd 日本事業部" },
       { property: "og:description", content: "日本企業向けスリランカ人材採用支援。" },

@@ -1,13 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { About, Chairman, JapanSpecialization, Achievements, WhyChoose, WhyTalent, Contact } from "@/components/site/sections";
+import {
+  About,
+  Chairman,
+  JapanSpecialization,
+  Achievements,
+  WhyChoose,
+  WhyTalent,
+  Contact,
+} from "@/components/site/sections";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "会社概要｜Trans Gulf Global (Pvt) Ltd 日本事業部" },
-      { name: "description", content: "35年以上の実績を持つSLBFE認可の海外雇用機関として、日本企業向けに倫理的なスリランカ人材採用を支援します。" },
+      {
+        name: "description",
+        content:
+          "35年以上の実績を持つSLBFE認可の海外雇用機関として、日本企業向けに倫理的なスリランカ人材採用を支援します。",
+      },
       { property: "og:title", content: "会社概要｜Trans Gulf Global (Pvt) Ltd" },
       { property: "og:description", content: "日本企業を支える認可スリランカ人材送り出し機関。" },
       { property: "og:url", content: "/about" },
@@ -17,7 +29,7 @@ export const Route = createFileRoute("/about")({
   component: () => (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="pt-16 md:pt-20">
+      <main className="pt-14 md:pt-16">
         <About />
         <Chairman />
         <JapanSpecialization />

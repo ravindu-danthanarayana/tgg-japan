@@ -34,12 +34,14 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
           : "bg-transparent"
       }`}
     >
-      <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <img src={tggLogo} alt="Trans Gulf Global (Pvt) Ltd" className="h-10 w-10 object-contain" />
+      <div className="container-page flex h-14 items-center justify-between md:h-16">
+        <Link to="/" className="flex items-center gap-2 group">
+          <img src={tggLogo} alt="Trans Gulf Global (Pvt) Ltd" className="h-8 w-8 object-contain" />
           <span className="flex flex-col leading-tight">
-            <span className="text-[15px] font-semibold tracking-tight text-[color:var(--brand-navy)]">Trans Gulf Global (Pvt) Ltd</span>
-            <span className="mono text-[10px] text-[color:var(--ink-soft)] tracking-widest uppercase">
+            <span className="text-sm font-semibold tracking-tight text-[color:var(--brand-navy)]">
+              Trans Gulf Global (Pvt) Ltd
+            </span>
+            <span className="mono text-[9px] text-[color:var(--ink-soft)] tracking-widest uppercase">
               日本事業部
             </span>
           </span>
@@ -50,7 +52,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
             <Link
               key={item.to}
               to={item.to}
-              className="px-3.5 py-2 text-sm text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition rounded-full"
+              className="px-2.5 py-1 text-xs text-[color:var(--ink-soft)] hover:text-[color:var(--ink)] transition rounded-full"
               activeProps={{ className: "text-[color:var(--ink)] font-medium" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -59,19 +61,28 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <Link to="/contact" className="btn-primary">
+        <div className="hidden lg:flex items-center gap-2">
+          <a
+            href="https://www.tggkandy.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost btn-sm"
+          >
+            コーポレートサイト
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.75} />
+          </a>
+          <Link to="/contact" className="btn-primary btn-sm">
             人材を相談する
-            <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.75} />
           </Link>
         </div>
 
         <button
           aria-label="メニューを開閉"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-[color:var(--hairline)]"
+          className="lg:hidden grid h-8 w-8 place-items-center rounded-full border border-[color:var(--hairline)]"
         >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          {open ? <X className="h-3.5 w-3.5" /> : <Menu className="h-3.5 w-3.5" />}
         </button>
       </div>
 
@@ -88,9 +99,24 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
                 {item.label}
               </Link>
             ))}
-            <Link to="/contact" className="btn-primary mt-4 self-start" onClick={() => setOpen(false)}>
-              人材を相談する <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 mt-4">
+              <Link
+                to="/contact"
+                className="btn-primary btn-sm self-start"
+                onClick={() => setOpen(false)}
+              >
+                人材を相談する <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+              <a
+                href="https://www.tggkandy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost btn-sm self-start"
+                onClick={() => setOpen(false)}
+              >
+                コーポレートサイト <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       )}
