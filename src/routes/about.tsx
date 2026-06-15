@@ -1,15 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import {
-  About,
-  Chairman,
-  JapanSpecialization,
-  Achievements,
-  WhyChoose,
-  WhyTalent,
-  Contact,
-} from "@/components/site/sections";
+import { About, Chairman, Achievements, Contact } from "@/components/site/sections";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,10 +24,7 @@ export const Route = createFileRoute("/about")({
       <main className="pt-14 md:pt-16">
         <About />
         <Chairman />
-        <JapanSpecialization />
         <Achievements />
-        <WhyChoose />
-        <WhyTalent />
         <Contact />
       </main>
       <Footer />

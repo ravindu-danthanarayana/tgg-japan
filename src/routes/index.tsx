@@ -36,11 +36,9 @@ function Index() {
       <Navbar transparent />
       <main>
         <Hero />
-        <WhyChoose />
         <JapanSpecialization />
+        <WhyChoose />
         <Industries />
-        <Process />
-        <Faq />
         <Contact />
       </main>
       <Footer />

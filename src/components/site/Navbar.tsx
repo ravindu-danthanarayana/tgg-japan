@@ -7,7 +7,7 @@ const nav = [
   { label: "ホーム", to: "/" },
   { label: "会社概要", to: "/about" },
   { label: "サービス", to: "/services" },
-  { label: "対応業種", to: "/industries" },
+  { label: "スリランカについて", to: "/srilanka" },
   { label: "採用工程", to: "/process" },
   { label: "よくある質問", to: "/faq" },
   { label: "お問い合わせ", to: "/contact" },

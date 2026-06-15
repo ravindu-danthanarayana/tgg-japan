@@ -356,16 +356,16 @@
   }
 }
 
-main.pt-16 > section:first-child {
+main.pt-14 > section:first-child {
   padding-top: 3rem !important;
 }
 
 @media (max-width: 639px) {
-  main.pt-16 {
+  main.pt-14 {
     padding-top: 4rem !important;
   }
 
-  main.pt-16 > section:first-child {
+  main.pt-14 > section:first-child {
     padding-top: 2.5rem !important;
   }
 }

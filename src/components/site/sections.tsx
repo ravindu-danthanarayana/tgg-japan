@@ -64,7 +64,7 @@ export function Hero() {
             className="mt-6 text-[2.5rem] leading-[1.04] sm:text-6xl lg:text-[5.25rem] tracking-tight"
           >
             日本企業と、<span className="serif italic">信頼できる</span>
-            スリランカ人材を<span className="serif italic">確実に</span>つなぐ。
+            スリランカ人材をつなぐ。
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -95,19 +95,12 @@ export function Hero() {
         >
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[color:var(--hairline)]">
             <img
-              src={heroImg}
-              alt="図面を確認する日本の現場技術者"
+              src={teamImg}
+              alt="笑顔のスリランカ人の男女"
               className="h-full w-full object-cover"
               width={1600}
               height={1200}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/40 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-white">
-              <div className="mono text-[10px] tracking-widest uppercase opacity-90">
-                東京・大阪・名古屋
-              </div>
-              <div className="mono text-[10px] tracking-widest uppercase opacity-90">SLBFE認可</div>
-            </div>
           </div>
         </motion.div>
       </div>
@@ -119,7 +112,7 @@ export function Hero() {
             { k: "35年以上", l: "事業実績" },
             { k: "2,500名以上", l: "送り出し実績" },
             { k: "100%", l: "法令順守の採用" },
-            { k: "24時間", l: "企業サポート" },
+            { k: "日本語", l: "企業サポート" },
           ].map((s, i) => (
             <div
               key={s.l}
@@ -216,8 +209,8 @@ export function About() {
         <div className="lg:col-span-5">
           <span className="eyebrow">会社概要</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            信頼、法令順守、長期的な定着を重視する
-            <span className="serif italic">認可人材機関。</span>
+            政府認定の
+            <span className="serif italic">人材送り出し機関。</span>
           </h2>
           <div className="mt-8 rounded-2xl overflow-hidden border border-[color:var(--hairline)] aspect-[16/10] bg-[color:var(--paper-warm)] shadow-sm group">
             <img
@@ -229,14 +222,14 @@ export function About() {
         </div>
         <div className="lg:col-span-7 grid gap-10">
           <p className="text-[color:var(--ink-soft)] md:text-lg leading-relaxed">
-            Trans Gulf Global (Pvt) Ltdは、スリランカを拠点とする海外人材紹介・送り出し機関です。
+            Trans Gulf Global (Pvt) Ltdは、スリランカを拠点とする送り出し機関です。
             35年以上の運用実績をもとに、製造、建設、宿泊、介護分野などの日本企業に対し、
             事業規模に応じた人材確保を支援しています。
           </p>
           <div className="grid sm:grid-cols-2 gap-px bg-[color:var(--hairline)] border border-[color:var(--hairline)] rounded-2xl overflow-hidden">
             <div className="bg-white p-7">
               <div className="mono text-[10px] tracking-widest uppercase text-[color:var(--brand-red)]">
-                使命
+                ミッション
               </div>
               <p className="mt-3 text-sm leading-relaxed">
                 倫理的に採用し、厳格に選考したスリランカ人材を通じて、
@@ -245,18 +238,18 @@ export function About() {
             </div>
             <div className="bg-white p-7">
               <div className="mono text-[10px] tracking-widest uppercase text-[color:var(--brand-red)]">
-                展望
+                ビジョン
               </div>
               <p className="mt-3 text-sm leading-relaxed">
                 法令順守、定着率、長期的な信頼関係を軸に、
-                南アジア人材と日本企業をつなぐ最も信頼される架け橋を目指します。
+                スリランカ人材と日本企業をつなぐ最も信頼される架け橋を目指します。
               </p>
             </div>
           </div>
           <ul className="grid sm:grid-cols-2 gap-3 text-sm">
             {[
               "35年以上の実績",
-              "認可人材紹介機関",
+              "政府認定の送り出し機関",
               "信頼性の高い人材支援",
               "長期的な企業連携",
               "倫理的な採用運用",
@@ -535,12 +528,8 @@ import { useState } from "react";
 export function Faq() {
   const faqs = [
     {
-      q: "対応可能な在留資格区分は何ですか。",
-      a: "特定技能、技能実習、技術・人文知識・国際業務など、雇用条件に応じた区分の手続きを支援します。必要に応じて貴社の専門家とも連携します。",
-    },
-    {
       q: "採用から配属までどのくらいかかりますか。",
-      a: "一般的には8週間から14週間程度です。在留資格区分、健康診断、書類認証の進行状況により変動します。大量採用では初期段階で工程表を作成します。",
+      a: "一般的には3ヶ月から6ヶ月程度です。在留資格区分、健康診断、書類認証の進行状況により変動します。大量採用では初期段階で工程表を作成します。",
     },
     {
       q: "候補者から採用手数料を徴収しますか。",
@@ -548,7 +537,7 @@ export function Faq() {
     },
     {
       q: "候補者の日本語レベルはどの程度ですか。",
-      a: "出国前研修では、基礎的な業務日本語、日本語能力試験N5からN4相当を見据えた学習、職種別語彙、職場マナーを指導します。",
+      a: "多くの候補者はJLPT N5〜N4相当の日本語学習経験を持っています。当社では、日本で働くために必要な基礎的な会話力や、業務で使用する職場日本語を含め、日本語能力をさらに向上させるための出国前日本語教育を提供しています。",
     },
     {
       q: "50名以上の大量採用にも対応できますか。",
@@ -556,7 +545,7 @@ export function Faq() {
     },
     {
       q: "認可を受けた機関ですか。",
-      a: "はい。Trans Gulf Global (Pvt) Ltdは、35年以上の運用実績を持つSLBFE認可の海外雇用機関です。",
+      a: "はい。Trans Gulf Global (Pvt) Ltdは、スリランカ海外雇用局（SLBFE）よりライセンスを受けた人材採用機関であり、スリランカ政府認定の送り出し機関です。OTIT登録番号はLKA000138です。",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -611,9 +600,7 @@ export function Contact() {
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
             人材のご相談は、<span className="serif italic">お気軽にお問い合わせください。</span>
           </h2>
-          <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed">
-            採用人数、職種、時期などをご共有ください。専任担当者が貴社向けの提案をご案内します。
-          </p>
+
           <div className="mt-10 space-y-4 text-sm">
             <div className="flex items-center gap-3">
               <BriefcaseBusiness className="h-4 w-4 text-[color:var(--brand-red)]" />
@@ -644,7 +631,7 @@ export function Contact() {
           {[
             { n: "company", l: "会社名", t: "text" },
             { n: "contact", l: "ご担当者名", t: "text" },
-            { n: "email", l: "業務用メール", t: "email" },
+            { n: "email", l: "メールアドレス", t: "email" },
             { n: "phone", l: "電話番号", t: "tel" },
             { n: "industry", l: "業種", t: "text" },
             { n: "positions", l: "募集職種", t: "text" },
@@ -697,11 +684,11 @@ export function Chairman() {
           <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-[color:var(--hairline)] relative group shadow-md">
             <img
               src={chairmanImg}
-              alt="会長 エー・エム・ラフィーク"
+              alt="会長 A. M. Rafique"
               className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--ink)]/85 via-[color:var(--ink)]/40 to-transparent p-6 text-white">
-              <h3 className="serif text-2xl font-medium">エー・エム・ラフィーク</h3>
+              <h3 className="serif text-2xl font-medium">A. M. Rafique</h3>
               <p className="mono text-[10px] tracking-widest uppercase opacity-85 mt-1">
                 会長、Trans Gulf Global (Pvt) Ltd
               </p>
@@ -726,7 +713,7 @@ export function Chairman() {
             </p>
           </div>
           <div className="mt-8 pt-6 border-t border-[color:var(--hairline)]">
-            <div className="font-semibold text-[color:var(--ink)]">エー・エム・ラフィーク</div>
+            <div className="font-semibold text-[color:var(--ink)]">A. M. Rafique</div>
             <div className="mono text-xs text-[color:var(--ink-soft)] mt-1">
               会長、Trans Gulf Global (Pvt) Ltd
             </div>
@@ -751,9 +738,14 @@ export function JapanSpecialization() {
       label: "現地支援",
     },
     {
-      title: "認可送り出し機関",
-      desc: "スリランカ政府に認可された送り出し機関として登録されており、技能実習制度におけるOTIT登録番号も保有しています。苦情ゼロの運用を維持しています。",
-      label: "政府認可",
+      title: "日本人スタッフによるサポート",
+      desc: "当社には日本人スタッフが在籍しており、日本企業様と日本語でスムーズにコミュニケーションをとることが可能です。",
+      label: "日本語対応",
+    },
+    {
+      title: "認定送り出し機関",
+      desc: "スリランカ政府に認定された送り出し機関として登録されており、技能実習制度におけるOTIT登録番号も保有しています。",
+      label: "政府認定",
     },
   ];
 
@@ -769,7 +761,7 @@ export function JapanSpecialization() {
             スリランカ・キャンディから日本の受け入れ現場まで、体系的な研修、現地支援、法令順守を一体で提供します。
           </p>
         </div>
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <div
               key={f.title}
@@ -784,9 +776,9 @@ export function JapanSpecialization() {
                   {f.desc}
                 </p>
               </div>
-              {i === 2 && (
+              {i === 3 && (
                 <div className="mt-6 pt-4 border-t border-[color:var(--hairline)] flex justify-between text-xs mono text-[color:var(--ink-soft)]">
-                  <span>認可番号 3687</span>
+                  <span>SLBFE認可番号 3687</span>
                   <span>OTIT番号 LKA000138</span>
                 </div>
               )}
@@ -874,6 +866,74 @@ export function Achievements() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- SRI LANKA OVERVIEW ---------- */
+export function SrilankaOverview() {
+  const info = [
+    {
+      label: "位置・地理",
+      value: "インドの南側に位置する美しい島国で、「インド洋の真珠」とも呼ばれています。",
+      detail: "位置: 南アジア / インド洋",
+    },
+    {
+      label: "人口と面積",
+      value: "人口は約2,200万人。国土面積は約65,610㎢で、日本の北海道の約0.8倍に相当します。",
+      detail: "人口: 約2,200万人 / 面積: 65,610㎢",
+    },
+    {
+      label: "言語",
+      value: "公用語はシンハラ語とタミル語ですが、ビジネスや高等教育では英語も広く普及しています。",
+      detail: "公用語: シンハラ語、タミル語、英語",
+    },
+    {
+      label: "宗教構成",
+      value:
+        "仏教（約70%）をはじめ、ヒンドゥー教、イスラム教、キリスト教など多様な宗教が共存しています。",
+      detail: "仏教徒が約70%を占める",
+    },
+    {
+      label: "国民性・特徴",
+      value:
+        "親日的で非常に真面目。識字率は92%以上と高く、礼儀正しさと協調性を重んじる温和な国民性です。",
+      detail: "高い識字率と親日的な文化",
+    },
+  ];
+
+  return (
+    <section className="py-24 md:py-32 bg-white">
+      <div className="container-page">
+        <div className="max-w-3xl">
+          <span className="eyebrow">スリランカについて</span>
+          <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
+            インド洋に浮かぶ親日国、<span className="serif italic">スリランカ。</span>
+          </h2>
+          <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed md:text-lg max-w-2xl">
+            豊かな歴史と高い教育水準を持ち、近年日本での就労を目指す優秀な人材が増加しているスリランカの基本情報をご紹介します。
+          </p>
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {info.map((item, idx) => (
+            <div
+              key={item.label}
+              className="bg-[color:var(--paper-warm)]/30 border border-[color:var(--hairline)] rounded-2xl p-8 flex flex-col justify-between transition hover:border-[color:var(--ink)]"
+            >
+              <div>
+                <div className="mono text-[10px] tracking-widest uppercase text-[color:var(--brand-red)]">
+                  0{idx + 1} . {item.detail}
+                </div>
+                <h3 className="text-xl font-medium mt-4">{item.label}</h3>
+                <p className="mt-3 text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                  {item.value}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
