@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { Services, Process, Contact, Industries } from "@/components/site/sections";
+import { Process, Contact, Industries } from "@/components/site/sections";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -22,7 +22,6 @@ export const Route = createFileRoute("/services")({
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="pt-14 md:pt-16">
-        <Services />
         <Industries />
         <Process />
         <Contact />

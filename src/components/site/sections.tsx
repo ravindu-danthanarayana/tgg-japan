@@ -63,8 +63,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="mt-6 text-[2.5rem] leading-[1.04] sm:text-6xl lg:text-[5.25rem] tracking-tight"
           >
-            日本企業と、<span className="serif italic">信頼できる</span>
-            スリランカ人材をつなぐ。
+            日本企業と
+            <br className="sm:hidden" />
+            <span className="serif italic">信頼できる</span>スリランカ人材をつなぐ
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -174,7 +175,9 @@ export function WhyChoose() {
           eyebrow="選ばれる理由"
           title={
             <>
-              日本企業の人材計画を<span className="serif italic">確実に支える</span>採用パートナー。
+              日本企業の人材計画を
+              <br className="sm:hidden" />
+              確実に支える採用パートナー
             </>
           }
           lede="認可機関としての厳格な運用と、日本の人事部門が求める迅速な対応力を両立しています。"
@@ -210,7 +213,8 @@ export function About() {
           <span className="eyebrow">会社概要</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
             政府認定の
-            <span className="serif italic">人材送り出し機関。</span>
+            <br className="sm:hidden" />
+            <span className="serif italic">人材送り出し機関</span>
           </h2>
           <div className="mt-8 rounded-2xl overflow-hidden border border-[color:var(--hairline)] aspect-[16/10] bg-[color:var(--paper-warm)] shadow-sm group">
             <img
@@ -310,7 +314,9 @@ export function Services() {
         <div className="max-w-3xl">
           <span className="eyebrow !text-white/60">サービス</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            募集から配属まで、採用プロセスを<span className="serif italic">一貫して</span>支援。
+            募集から配属まで
+            <br className="sm:hidden" />
+            採用プロセスを一貫して支援
           </h2>
           <p className="mt-5 text-white/70 md:text-lg leading-relaxed max-w-2xl">
             要件確認から来日後のフォローまで、専任チームが各工程を責任を持って進行します。
@@ -351,7 +357,9 @@ export function Industries() {
           eyebrow="対応業種"
           title={
             <>
-              技能実習・特定技能の<span className="serif italic">全分野に対応。</span>
+              技能実習・特定技能の
+              <br className="sm:hidden" />
+              全分野に対応
             </>
           }
           lede="技能実習制度および特定技能制度の全分野において、人材支援を行っています。"
@@ -387,14 +395,16 @@ export function Industries() {
 /* ---------- PROCESS ---------- */
 export function Process() {
   const steps = [
-    ["要件確認", "職務内容、人数、時期、法令要件を明確に整理。"],
-    ["候補者募集", "全国の人材ネットワークから条件に合う候補者へ接触。"],
-    ["一次選考", "面接、経歴確認、職場適性を総合的に確認。"],
-    ["企業面接", "日本企業側の面接形式に合わせて実施を調整。"],
-    ["書類準備", "契約書、証明書、関係機関への申請書類を整備。"],
-    ["健康確認", "認定医療機関で出国前の健康診断を実施。"],
-    ["在留資格手続き", "特定技能、技能実習、技術系区分の申請進捗を管理。"],
-    ["配属", "航空手配、来日、受け入れ現場への引き継ぎを支援。"],
+    ["募集・選考", "適切な候補者の募集から、厳格な面接による選考までを行います。"],
+    [
+      "技能・日本語教育",
+      "日本での業務に必要な技能教育と、円滑なコミュニケーションのための日本語教育を行います。",
+    ],
+    ["手続き・申請", "複雑な在留資格申請や渡航手続きを、迅速かつ正確にサポートします。"],
+    [
+      "出国・配属",
+      "日本への出国手続きから、現地の現場での受け入れ・配属までを一貫してフォローします。",
+    ],
   ];
   return (
     <section id="process" className="py-24 md:py-32 bg-[color:var(--paper-warm)]">
@@ -403,7 +413,9 @@ export function Process() {
           eyebrow="採用プロセス"
           title={
             <>
-              八つの明確な工程で、<span className="serif italic">不安のない採用を。</span>
+              明確な工程で
+              <br className="sm:hidden" />
+              <span className="serif italic">不安のない採用を</span>
             </>
           }
           lede="各工程の進捗を文書で報告し、候補者の状況を常に把握できるようにします。"
@@ -427,14 +439,18 @@ export function Process() {
 /* ---------- WHY SRI LANKAN TALENT ---------- */
 export function WhyTalent() {
   const cards = [
-    { t: "勤勉な人材", d: "長時間勤務でも安定した姿勢で業務に取り組む人材を選定。" },
-    { t: "高い職業倫理", d: "時間厳守、礼節、規則順守を重視する人材特性。" },
-    { t: "高い適応力", d: "日本の品質基準や職場運用に順応しやすい候補者を育成。" },
-    { t: "優れた定着性", d: "長期契約の完遂を見据えた適性確認とマッチング。" },
-    { t: "安全意識", d: "保護具、作業手順、現場ルールの基本理解を事前に確認。" },
-    { t: "費用対効果", d: "定着を重視した採用により、採用投資の効果を高めます。" },
-    { t: "安定した勤務姿勢", d: "海外就業実績に基づき、信頼性の高い候補者を選考。" },
-    { t: "業界経験", d: "建設、製造、宿泊、介護などの職種別確認を実施。" },
+    {
+      t: "高い学習意欲",
+      d: "海外就労を通じて成長したいという意欲を持ち、日本語や専門技能の習得に貪欲な人材が多くいます。",
+    },
+    {
+      t: "誠実で協調性のある人柄",
+      d: "職場のルールを守り、周囲と協力しながら働く姿勢を大切にします。",
+    },
+    {
+      t: "粘り強く働く姿勢",
+      d: "困難な環境にも前向きに向き合い、長く安定して働く意欲があります。",
+    },
   ];
   return (
     <section className="py-24 md:py-32">
@@ -442,14 +458,16 @@ export function WhyTalent() {
         <div className="lg:col-span-4">
           <span className="eyebrow">スリランカ人材の強み</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            日本の現場が<span className="serif italic">安心して任せられる</span>人材。
+            日本の現場が
+            <br className="sm:hidden" />
+            <span className="serif italic">安心して任せられる</span>人材
           </h2>
           <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed">
             スリランカ人材は、規律、礼節、柔軟性、サービス意識を兼ね備えています。
             日本企業が重視する現場適応力と安定した勤務姿勢を、採用段階から丁寧に確認します。
           </p>
         </div>
-        <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
+        <div className="lg:col-span-8 grid sm:grid-cols-1 md:grid-cols-3 gap-4">
           {cards.map((c, i) => (
             <div key={c.t} className="card-soft p-6">
               <div className="mono text-[10px] tracking-widest text-[color:var(--brand-red)]">
@@ -491,7 +509,9 @@ export function Testimonials() {
           eyebrow="導入企業の声"
           title={
             <>
-              日本企業から<span className="serif italic">寄せられる評価。</span>
+              日本企業から
+              <br className="sm:hidden" />
+              寄せられる評価
             </>
           }
         />
@@ -540,10 +560,6 @@ export function Faq() {
       a: "多くの候補者はJLPT N5〜N4相当の日本語学習経験を持っています。当社では、日本で働くために必要な基礎的な会話力や、業務で使用する職場日本語を含め、日本語能力をさらに向上させるための出国前日本語教育を提供しています。",
     },
     {
-      q: "50名以上の大量採用にも対応できますか。",
-      a: "対応可能です。並行選考、健康診断の一括手配、段階的な配属計画により、まとまった人数の採用にも対応します。",
-    },
-    {
       q: "認可を受けた機関ですか。",
       a: "はい。Trans Gulf Global (Pvt) Ltdは、スリランカ海外雇用局（SLBFE）よりライセンスを受けた人材採用機関であり、スリランカ政府認定の送り出し機関です。OTIT登録番号はLKA000138です。",
     },
@@ -555,7 +571,9 @@ export function Faq() {
         <div className="lg:col-span-4">
           <span className="eyebrow">よくある質問</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            採用に関する<span className="serif italic">ご質問。</span>
+            採用に関する
+            <br className="sm:hidden" />
+            <span className="serif italic">ご質問</span>
           </h2>
         </div>
         <div className="lg:col-span-8 border-t border-[color:var(--hairline)]">
@@ -598,7 +616,11 @@ export function Contact() {
         <div className="lg:col-span-5">
           <span className="eyebrow">お問い合わせ</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            人材のご相談は、<span className="serif italic">お気軽にお問い合わせください。</span>
+            人材のご相談は
+            <br className="sm:hidden" />
+            <span className="serif italic">お気軽に</span>
+            <br className="sm:hidden" />
+            お問い合わせください
           </h2>
 
           <div className="mt-10 space-y-4 text-sm">
@@ -646,6 +668,7 @@ export function Contact() {
                 name={f.n}
                 type={f.t}
                 maxLength={200}
+                min={f.t === "number" ? 0 : undefined}
                 className="mt-2 w-full bg-transparent border-b border-[color:var(--hairline)] focus:border-[color:var(--ink)] outline-none py-2.5 text-[15px] transition"
               />
             </label>
@@ -698,7 +721,9 @@ export function Chairman() {
         <div className="lg:col-span-7">
           <span className="eyebrow">会長メッセージ</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            企業に価値を届け、人材の未来を<span className="serif italic">切り拓く。</span>
+            企業に価値を届け
+            <br className="sm:hidden" />
+            人材の未来を<span className="serif italic">切り拓く</span>
           </h2>
           <div className="mt-8 space-y-6 text-[color:var(--ink-soft)] md:text-lg leading-relaxed">
             <p className="serif italic text-[color:var(--ink)] text-xl font-medium">
@@ -826,7 +851,9 @@ export function Achievements() {
           <div className="lg:col-span-4">
             <span className="eyebrow">実績・表彰</span>
             <h2 className="mt-5 text-3xl md:text-4xl tracking-tight leading-[1.08]">
-              信頼と品質を積み重ねてきた<span className="serif italic">実績。</span>
+              信頼と品質を積み重ねてきた
+              <br className="sm:hidden" />
+              <span className="serif italic">実績</span>
             </h2>
             <p className="mt-4 text-sm text-[color:var(--ink-soft)] leading-relaxed">
               法令順守と品質への継続的な取り組みにより、スリランカ海外雇用局SLBFEから高い評価と表彰を受けています。
@@ -910,7 +937,9 @@ export function SrilankaOverview() {
         <div className="max-w-3xl">
           <span className="eyebrow">スリランカについて</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            インド洋に浮かぶ親日国、<span className="serif italic">スリランカ。</span>
+            インド洋に浮かぶ親日国
+            <br className="sm:hidden" />
+            <span className="serif italic">スリランカ</span>
           </h2>
           <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed md:text-lg max-w-2xl">
             豊かな歴史と高い教育水準を持ち、近年日本での就労を目指す優秀な人材が増加しているスリランカの基本情報をご紹介します。
