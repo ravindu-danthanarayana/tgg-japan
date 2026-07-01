@@ -28,11 +28,9 @@ import {
   Truck,
   UtensilsCrossed,
   Sprout,
-  Wrench as WrenchIcon,
-  Cog,
   BriefcaseBusiness,
+  MapPinned,
 } from "lucide-react";
-import heroImg from "@/assets/hero-main.jpg";
 import chairmanImg from "@/assets/chairman.jpg";
 import lobbyImg from "@/assets/office-lobby.jpg";
 import teamImg from "@/assets/team.jpg";
@@ -73,7 +71,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-8 max-w-xl text-base md:text-lg text-[color:var(--ink-soft)] leading-relaxed"
           >
-            Trans Gulf Global (Pvt) Ltdは、倫理的な採用体制と円滑な送り出し支援により、
+            Trans Gulf Global (Pvt) Ltdは、倫理的な採用体制と円滑な送出支援により、
             日本企業が安心して任せられる、実務対応力の高いスリランカ人材の採用を支援します。
           </motion.p>
           <motion.div
@@ -111,9 +109,9 @@ export function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 border-y border-[color:var(--hairline)]">
           {[
             { k: "35年以上", l: "事業実績" },
-            { k: "2,500名以上", l: "送り出し実績" },
+            { k: "2,500名以上", l: "紹介実績" },
             { k: "100%", l: "法令順守の採用" },
-            { k: "日本語", l: "企業サポート" },
+            { k: "日本語", l: "日本国内のサポート体制" },
           ].map((s, i) => (
             <div
               key={s.l}
@@ -159,8 +157,12 @@ function SectionHead({
 /* ---------- WHY CHOOSE ---------- */
 export function WhyChoose() {
   const items = [
-    { i: Award, t: "35年以上の実績", d: "海外人材採用における長年の運用経験と実務知見。" },
-    { i: ShieldCheck, t: "政府認可の送り出し機関", d: "SLBFE認可を受けた正式な海外雇用機関です。" },
+    {
+      i: Award,
+      t: "35年以上にわたる海外人材紹介の実績",
+      d: "海外人材採用における長年の運用経験と実務知見。",
+    },
+    { i: ShieldCheck, t: "政府認可の送出機関", d: "SLBFE認可を受けた正式な海外雇用機関です。" },
     { i: Users, t: "豊富な人材ネットワーク", d: "技能確認済みのスリランカ人材を全国規模で確保。" },
     { i: Clock, t: "迅速な採用進行", d: "募集から配属まで、合意した期限に沿って効率的に進行。" },
     { i: HeartHandshake, t: "倫理的な採用", d: "候補者負担を抑えた、公正で透明性の高い採用方針。" },
@@ -214,7 +216,7 @@ export function About() {
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
             政府認定の
             <br className="sm:hidden" />
-            <span className="serif italic">人材送り出し機関</span>
+            <span className="serif italic">人材送出機関</span>
           </h2>
           <div className="mt-8 rounded-2xl overflow-hidden border border-[color:var(--hairline)] aspect-[16/10] bg-[color:var(--paper-warm)] shadow-sm group">
             <img
@@ -226,7 +228,7 @@ export function About() {
         </div>
         <div className="lg:col-span-7 grid gap-10">
           <p className="text-[color:var(--ink-soft)] md:text-lg leading-relaxed">
-            Trans Gulf Global (Pvt) Ltdは、スリランカを拠点とする送り出し機関です。
+            Trans Gulf Global (Pvt) Ltdは、スリランカを拠点とする送出機関です。
             35年以上の運用実績をもとに、製造、建設、宿泊、介護分野などの日本企業に対し、
             事業規模に応じた人材確保を支援しています。
           </p>
@@ -252,8 +254,8 @@ export function About() {
           </div>
           <ul className="grid sm:grid-cols-2 gap-3 text-sm">
             {[
-              "35年以上の実績",
-              "政府認定の送り出し機関",
+              "35年以上にわたる海外人材紹介の実績",
+              "政府認定の送出機関",
               "信頼性の高い人材支援",
               "長期的な企業連携",
               "倫理的な採用運用",
@@ -339,16 +341,17 @@ export function Services() {
 /* ---------- INDUSTRIES ---------- */
 export function Industries() {
   const fields = [
-    { t: "運輸", i: Truck },
+    { t: "自動車運送業", i: Truck },
     { t: "介護", i: HeartHandshake },
     { t: "建設", i: HardHat },
-    { t: "製造", i: Factory },
     { t: "宿泊", i: Hotel },
     { t: "物流", i: PackageCheck },
     { t: "食品加工", i: UtensilsCrossed },
-    { t: "農業", i: Sprout },
+    { t: "物流倉庫", i: Sprout },
     { t: "施設管理", i: Building2 },
-    { t: "技術職", i: Cog },
+    { t: "航空グランドハンドリング", i: Plane },
+    { t: "外食業", i: UtensilsCrossed },
+    { t: "リネンサプライ", i: PackageCheck },
   ];
   return (
     <section id="industries" className="py-24 md:py-32">
@@ -357,9 +360,9 @@ export function Industries() {
           eyebrow="対応業種"
           title={
             <>
-              技能実習・特定技能の
+              技能実習（育成就労）・特定技能に
               <br className="sm:hidden" />
-              全分野に対応
+              対応
             </>
           }
           lede="技能実習制度および特定技能制度の全分野において、人材支援を行っています。"
@@ -395,39 +398,46 @@ export function Industries() {
 /* ---------- PROCESS ---------- */
 export function Process() {
   const steps = [
-    ["募集・選考", "適切な候補者の募集から、厳格な面接による選考までを行います。"],
-    [
-      "技能・日本語教育",
-      "日本での業務に必要な技能教育と、円滑なコミュニケーションのための日本語教育を行います。",
-    ],
-    ["手続き・申請", "複雑な在留資格申請や渡航手続きを、迅速かつ正確にサポートします。"],
-    [
-      "出国・配属",
-      "日本への出国手続きから、現地の現場での受け入れ・配属までを一貫してフォローします。",
-    ],
+    {
+      title: "候補者募集・選考",
+      body: "企業様の採用ニーズに応じて候補者を募集。面接を通じて、身元、経歴、職務適性を確認します。",
+    },
+    {
+      title: "書類準備・渡航手続き支援",
+      body: "証明書類準備、SLBFE登録、ビザ申請、健康診断、出国手続きをサポートします。",
+    },
+    {
+      title: "日本語教育",
+      body: "日本語教育、日本文化、生活マナー、職場マナー、就労前研修を実施します。",
+    },
+    {
+      title: "企業サポート",
+      body: "採用相談、日本語サポート、就労開始後サポートを提供します。",
+    },
   ];
   return (
     <section id="process" className="py-24 md:py-32 bg-[color:var(--paper-warm)]">
       <div className="container-page">
         <SectionHead
-          eyebrow="採用プロセス"
+          eyebrow="採用・送出しサポート"
           title={
             <>
-              明確な工程で
+              一貫したサポートで
               <br className="sm:hidden" />
-              <span className="serif italic">不安のない採用を</span>
+              <span className="serif italic">安心できる採用を</span>
             </>
           }
-          lede="各工程の進捗を文書で報告し、候補者の状況を常に把握できるようにします。"
         />
         <div className="mt-16 grid gap-px bg-[color:var(--hairline)] border border-[color:var(--hairline)] rounded-2xl overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map(([t, d], i) => (
-            <div key={t} className="bg-white p-7 relative">
+          {steps.map((step, i) => (
+            <div key={step.title} className="bg-white p-7 relative">
               <div className="mono text-[11px] tracking-widest text-[color:var(--brand-red)]">
                 0{i + 1}
               </div>
-              <div className="mt-4 text-base font-medium">{t}</div>
-              <p className="mt-2 text-sm text-[color:var(--ink-soft)] leading-relaxed">{d}</p>
+              <div className="mt-4 text-base font-medium">{step.title}</div>
+              <p className="mt-2 text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                {step.body}
+              </p>
             </div>
           ))}
         </div>
@@ -561,7 +571,7 @@ export function Faq() {
     },
     {
       q: "認可を受けた機関ですか。",
-      a: "はい。Trans Gulf Global (Pvt) Ltdは、スリランカ海外雇用局（SLBFE）よりライセンスを受けた人材採用機関であり、スリランカ政府認定の送り出し機関です。OTIT登録番号はLKA000138です。",
+      a: "はい。Trans Gulf Global (Pvt) Ltdは、スリランカ海外雇用局（SLBFE）よりライセンスを受けた人材採用機関であり、スリランカ政府認定の送出機関です。OTIT登録番号はLKA000138です。",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -616,11 +626,9 @@ export function Contact() {
         <div className="lg:col-span-5">
           <span className="eyebrow">お問い合わせ</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            人材のご相談は
-            <br className="sm:hidden" />
-            <span className="serif italic">お気軽に</span>
-            <br className="sm:hidden" />
-            お問い合わせください
+            人材のご相談は、
+            <br />
+            <span className="serif italic">お気軽にお問い合わせください</span>
           </h2>
 
           <div className="mt-10 space-y-4 text-sm">
@@ -630,7 +638,7 @@ export function Contact() {
             </div>
             <div className="flex items-center gap-3">
               <Headphones className="h-4 w-4 text-[color:var(--brand-red)]" />
-              <span>+94 81 222 0000</span>
+              <span>+94 81 222 1080</span>
             </div>
             <div className="flex items-center gap-3">
               <Headphones className="h-4 w-4 text-[color:var(--brand-red)]" />
@@ -646,6 +654,14 @@ export function Contact() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            const form = e.currentTarget;
+            const workers = form.elements.namedItem("workers") as HTMLInputElement | null;
+            if (workers && Number(workers.value) < 1) {
+              workers.setCustomValidity("1以上の人数を入力してください。");
+              workers.reportValidity();
+              return;
+            }
+            workers?.setCustomValidity("");
             alert("お問い合わせありがとうございます。担当者より折り返しご連絡いたします。");
           }}
           className="lg:col-span-7 bg-white border border-[color:var(--hairline)] rounded-2xl p-7 md:p-10 grid sm:grid-cols-2 gap-5"
@@ -657,7 +673,7 @@ export function Contact() {
             { n: "phone", l: "電話番号", t: "tel" },
             { n: "industry", l: "業種", t: "text" },
             { n: "positions", l: "募集職種", t: "text" },
-            { n: "workers", l: "採用予定人数", t: "number" },
+            { n: "workers", l: "予定採用人数", t: "number" },
           ].map((f) => (
             <label key={f.n} className="block">
               <span className="mono text-[10px] tracking-widest uppercase text-[color:var(--ink-soft)]">
@@ -668,7 +684,37 @@ export function Contact() {
                 name={f.n}
                 type={f.t}
                 maxLength={200}
-                min={f.t === "number" ? 0 : undefined}
+                min={f.t === "number" ? 1 : undefined}
+                inputMode={f.t === "number" ? "numeric" : undefined}
+                onKeyDown={
+                  f.t === "number"
+                    ? (e) => {
+                        if (["-", "+", "e", "E", "."].includes(e.key)) e.preventDefault();
+                      }
+                    : undefined
+                }
+                onPaste={
+                  f.t === "number"
+                    ? (e) => {
+                        const value = e.clipboardData.getData("text");
+                        if (!/^[1-9]\d*$/.test(value)) e.preventDefault();
+                      }
+                    : undefined
+                }
+                onInput={
+                  f.t === "number"
+                    ? (e) => {
+                        const input = e.currentTarget;
+                        input.value = input.value.replace(/[^\d]/g, "");
+                        if (input.value && Number(input.value) < 1) input.value = "1";
+                        input.setCustomValidity(
+                          input.value && Number(input.value) < 1
+                            ? "1以上の人数を入力してください。"
+                            : "",
+                        );
+                      }
+                    : undefined
+                }
                 className="mt-2 w-full bg-transparent border-b border-[color:var(--hairline)] focus:border-[color:var(--ink)] outline-none py-2.5 text-[15px] transition"
               />
             </label>
@@ -731,7 +777,7 @@ export function Chairman() {
               Ltdにとって採用支援とは、単に欠員を埋めることではありません。企業に確かな価値を届け、スリランカ人材の可能性を広げる取り組みです。」
             </p>
             <p>
-              30年以上にわたり、私たちは多様な業界の海外企業に対し、信頼でき、勤勉で、誠実な人材を送り出してきました。倫理的な採用、透明な手続き、迅速な動員体制が当社の強みです。
+              30年以上にわたり、私たちは多様な業界の海外企業に対し、信頼でき、勤勉で、誠実な人材を送出してきました。倫理的な採用、透明な手続き、迅速な動員体制が当社の強みです。
             </p>
             <p>
               当社と連携する企業は、単なる労働力ではなく、成果に向き合う人材チームを得ることができます。専門性と信頼をもって、貴社の人材ニーズを支援できることを心より願っています。
@@ -758,7 +804,7 @@ export function JapanSpecialization() {
       label: "日本語・文化",
     },
     {
-      title: "日本国内の連絡支援体制",
+      title: "日本国内のサポート体制",
       desc: "日本在住の経験豊富なスリランカ人スタッフによる支援体制を整え、配属後も人材と受け入れ企業の双方に対して、言語、生活、職場適応を継続的に支援します。",
       label: "現地支援",
     },
@@ -768,8 +814,8 @@ export function JapanSpecialization() {
       label: "日本語対応",
     },
     {
-      title: "認定送り出し機関",
-      desc: "スリランカ政府に認定された送り出し機関として登録されており、技能実習制度におけるOTIT登録番号も保有しています。",
+      title: "認定送出機関",
+      desc: "スリランカ政府に認定された送出機関として登録されており、技能実習制度におけるOTIT登録番号も保有しています。",
       label: "政府認定",
     },
   ];
@@ -780,10 +826,10 @@ export function JapanSpecialization() {
         <div className="max-w-3xl">
           <span className="eyebrow">日本向け運用体制</span>
           <h2 className="mt-5 text-3xl md:text-5xl tracking-tight leading-[1.08]">
-            日本の法令順守と品質基準に合わせた<span className="serif italic">専門運用。</span>
+            日本国内の<span className="serif italic">サポート体制</span>
           </h2>
           <p className="mt-5 text-[color:var(--ink-soft)] leading-relaxed md:text-lg max-w-2xl">
-            スリランカ・キャンディから日本の受け入れ現場まで、体系的な研修、現地支援、法令順守を一体で提供します。
+            スリランカ・キャンディから日本国内まで、候補者と受け入れ企業の双方を継続的に支援します。
           </p>
         </div>
         <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -831,14 +877,14 @@ export function Achievements() {
       img: trophyStar,
     },
     {
-      title: "送り出し実績",
-      desc: "12か国にわたり2,500名以上の技能人材を送り出し、高い定着実績を築いています。",
+      title: "紹介実績",
+      desc: "12か国にわたり2,500名以上の技能人材を送出し、高い定着実績を築いています。",
       metric: "2,500名以上",
       img: trophyGlobe,
     },
     {
       title: "法令順守の運用",
-      desc: "2025年の苦情登録はゼロ。SLBFEおよびOTITの要件に沿った適正な送り出しを徹底しています。",
+      desc: "2025年の苦情登録はゼロ。SLBFEおよびOTITの要件に沿った適正な送出を徹底しています。",
       metric: "苦情 0件",
       icon: ShieldCheck,
     },
@@ -851,9 +897,9 @@ export function Achievements() {
           <div className="lg:col-span-4">
             <span className="eyebrow">実績・表彰</span>
             <h2 className="mt-5 text-3xl md:text-4xl tracking-tight leading-[1.08]">
-              信頼と品質を積み重ねてきた
+              積み重ねてきた
               <br className="sm:hidden" />
-              <span className="serif italic">実績</span>
+              <span className="serif italic">信頼と実績</span>
             </h2>
             <p className="mt-4 text-sm text-[color:var(--ink-soft)] leading-relaxed">
               法令順守と品質への継続的な取り組みにより、スリランカ海外雇用局SLBFEから高い評価と表彰を受けています。
@@ -946,23 +992,42 @@ export function SrilankaOverview() {
           </p>
         </div>
 
-        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {info.map((item, idx) => (
-            <div
-              key={item.label}
-              className="bg-[color:var(--paper-warm)]/30 border border-[color:var(--hairline)] rounded-2xl p-8 flex flex-col justify-between transition hover:border-[color:var(--ink)]"
-            >
-              <div>
-                <div className="mono text-[10px] tracking-widest uppercase text-[color:var(--brand-red)]">
-                  0{idx + 1} . {item.detail}
-                </div>
-                <h3 className="text-xl font-medium mt-4">{item.label}</h3>
-                <p className="mt-3 text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                  {item.value}
-                </p>
+        <div className="mt-12 grid lg:grid-cols-12 gap-6 items-stretch">
+          <div className="lg:col-span-4 bg-[color:var(--paper-warm)]/30 border border-[color:var(--hairline)] rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+            <div>
+              <MapPinned className="h-7 w-7 text-[color:var(--brand-red)]" strokeWidth={1.5} />
+              <h3 className="mt-5 text-xl font-medium">Sri Lanka</h3>
+              <p className="mt-3 text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                インド洋に位置する島国で、日本企業に紹介できる意欲ある人材を育んでいます。
+              </p>
+            </div>
+            <div className="mt-8 rounded-xl overflow-hidden border border-[color:var(--hairline)] shadow-sm">
+              <div className="h-10 bg-[#8d153a]" />
+              <div className="h-10 bg-[#ffb81c]" />
+              <div className="h-10 grid grid-cols-[1fr_1fr]">
+                <div className="bg-[#00534e]" />
+                <div className="bg-[#eb7400]" />
               </div>
             </div>
-          ))}
+          </div>
+          <div className="lg:col-span-8 grid md:grid-cols-2 gap-6">
+            {info.map((item, idx) => (
+              <div
+                key={item.label}
+                className="bg-[color:var(--paper-warm)]/30 border border-[color:var(--hairline)] rounded-2xl p-8 flex flex-col justify-between transition hover:border-[color:var(--ink)]"
+              >
+                <div>
+                  <div className="mono text-[10px] tracking-widest uppercase text-[color:var(--brand-red)]">
+                    0{idx + 1} . {item.detail}
+                  </div>
+                  <h3 className="text-xl font-medium mt-4">{item.label}</h3>
+                  <p className="mt-3 text-sm text-[color:var(--ink-soft)] leading-relaxed">
+                    {item.value}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

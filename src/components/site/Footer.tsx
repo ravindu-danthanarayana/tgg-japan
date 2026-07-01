@@ -43,12 +43,11 @@ export function Footer() {
               { l: "ホーム", to: "/" },
               { l: "会社概要", to: "/about" },
               { l: "サービス", to: "/services" },
-              { l: "対応業種", to: "/industries" },
-              { l: "採用工程", to: "/process" },
+              { l: "対応業種", to: "/services" },
               { l: "よくある質問", to: "/faq" },
               { l: "お問い合わせ", to: "/contact" },
             ].map((i) => (
-              <li key={i.to}>
+              <li key={`${i.to}-${i.l}`}>
                 <Link
                   to={i.to}
                   className="opacity-70 hover:opacity-100 hover:text-[color:var(--brand-red)] transition"
@@ -73,7 +72,7 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 mt-0.5 opacity-60" />
-              <a href="tel:+94812220000">+94 81 222 0000</a>
+              <a href="tel:+94812221080">+94 81 222 1080</a>
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 mt-0.5 opacity-60" />
@@ -91,7 +90,7 @@ export function Footer() {
               認可・コンプライアンス
             </div>
             <div className="text-sm mt-1">SLBFE認可番号 3687</div>
-            <div className="text-[11px] mt-1 opacity-70">OTIT送り出し機関番号 LKA000138</div>
+            <div className="text-[11px] mt-1 opacity-70">OTIT送出機関番号 LKA000138</div>
           </div>
         </div>
       </div>

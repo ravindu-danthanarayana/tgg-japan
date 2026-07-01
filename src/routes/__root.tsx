@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "日本企業向けに、倫理的に採用されたスリランカ人材の募集、選考、送り出し、配属後支援を一貫して提供します。",
+          "日本企業向けに、倫理的に採用されたスリランカ人材の募集、選考、送出、配属後支援を一貫して提供します。",
       },
       { name: "author", content: "Trans Gulf Global (Pvt) Ltd" },
       { property: "og:title", content: "Trans Gulf Global (Pvt) Ltd 日本事業部" },

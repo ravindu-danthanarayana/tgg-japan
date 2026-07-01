@@ -8,7 +8,6 @@ const nav = [
   { label: "会社概要", to: "/about" },
   { label: "サービス", to: "/services" },
   { label: "スリランカについて", to: "/srilanka" },
-  { label: "採用工程", to: "/process" },
   { label: "よくある質問", to: "/faq" },
   { label: "お問い合わせ", to: "/contact" },
 ] as const;
